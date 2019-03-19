@@ -20,21 +20,6 @@ class Battle {
     private ArrayList<Player> players = new ArrayList<>();
     private int player_cnt = 4;
 
-    private int[][] piece_init_pos =
-            {{50, 51, 52, 53, 54, 55, 56},
-                    {57, 58, 59, 60, 61, 62, 63},
-                    {64, 65, 66, 67, 68, 69, 70},
-                    {71, 72, 73, 74, 75, 76, 77}};
-    /*
-     * piece_pos:
-     *
-     *       0
-     *
-     *   3       1
-     *
-     *       2
-     * */
-
     Battle() {
         for (int i = 0; i < player_cnt; ++i) {
             players.add(new Player(i));
@@ -84,11 +69,6 @@ class Battle {
 
         Player(int code) {
             super(code);
-            for (int i = 0; i < PIECE_CNT; ++i) {
-                Piece npiece = new Piece(this.code, i, piece_init_pos[this.code][i]);
-                pieces.put(i, npiece);
-                board.what_in_pos.put(piece_init_pos[code][i], npiece);
-            }
         }
     }
 
