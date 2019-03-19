@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: online.ruin_of_future.nameless_chess.console
+
