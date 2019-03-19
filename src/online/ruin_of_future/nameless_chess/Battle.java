@@ -1,5 +1,7 @@
 package online.ruin_of_future.nameless_chess;
 
+import javafx.util.Pair;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,10 +15,10 @@ class MoveException extends Exception {
 }
 
 
-public class Battle {
-    StatusBoard board;
-    ArrayList<Player> players;
-    int player_cnt = 4;
+class Battle {
+    private StatusBoard board = new StatusBoard();
+    private ArrayList<Player> players = new ArrayList<>();
+    private int player_cnt = 4;
 
     private int[][] piece_init_pos =
             {{50, 51, 52, 53, 54, 55, 56},
@@ -34,19 +36,16 @@ public class Battle {
      * */
 
     Battle() {
-        board = new StatusBoard();
-        players = new ArrayList<>();
         for (int i = 0; i < player_cnt; ++i) {
             players.add(new Player(i));
         }
     }
 
     class StatusBoard extends Board {
-        Map<Integer, Piece> what_in_pos;
+        Map<Integer, Piece> what_in_pos = new HashMap<>();
 
         StatusBoard() {
             super();
-            what_in_pos = new HashMap<>();
         }
     }
 
@@ -104,23 +103,43 @@ public class Battle {
         return false;
     }
 
-    public int fight() {
+    private Pair<Integer, Integer> get_command() {
+        Scanner stdin = new Scanner(System.in);
+        int piece_to_move = stdin.nextInt();
+        if (piece_to_move == -1) {
+            return new Pair<>(-1, -1);
+        } else {
+            Integer destination = stdin.nextInt();
+            return new Pair<>(piece_to_move, destination);
+        }
+    }
+
+    private Pair<Integer, Integer> get_command(Pair<Integer, Integer> cmd) {
+        return cmd;
+    }
+
+    int fight() {
         //TODO: finish fight process
         int cur_player = 0;
         do {
             System.out.println(String.format("Round for player %d", cur_player));
             //TODO: interact here
-            System.out.println("Input the piece you want to move and the input the destination");
-            int piece_to_move, destination;
-            Scanner stdin = new Scanner(System.in);
-            piece_to_move = stdin.nextInt();
-            destination = stdin.nextInt();
-            try {
-                players.get(cur_player).pieces.get(piece_to_move).moveto(destination);
-                // change player
-                cur_player = (cur_player + 1) % player_cnt;
-            } catch (NullPointerException | MoveException e) {
-                System.out.println(e.getMessage());
+            System.out.println("Input the piece you want to move and the input the destination\n\t(-1 to exit)");
+
+            Integer piece_to_move, destination;
+            Pair<Integer, Integer> pair = get_command();
+            piece_to_move = pair.getKey();
+            destination = pair.getValue();
+            if (piece_to_move == -1) {
+                return -1;
+            } else {
+                try {
+                    players.get(cur_player).pieces.get(piece_to_move).moveto(destination);
+                    // change player
+                    cur_player = (cur_player + 1) % player_cnt;
+                } catch (NullPointerException | MoveException e) {
+                    System.out.println(e.getMessage());
+                }
             }
         } while (!winner_check());
         return 0;

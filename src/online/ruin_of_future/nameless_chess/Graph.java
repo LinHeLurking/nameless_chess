@@ -6,7 +6,7 @@ public class Graph extends Matrix {
         super(point_num, point_num);
     }
 
-    public void addedge(int from, int to) {
+    void add_edge(int from, int to) {
         mat[from][to] = mat[to][from] = 1;
     }
 

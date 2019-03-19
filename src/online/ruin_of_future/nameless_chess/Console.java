@@ -3,6 +3,14 @@ package online.ruin_of_future.nameless_chess;
 public class Console {
     public static void main(String[] arg) {
         Battle battle = new Battle();
-        battle.fight();
+        int status_code = battle.fight();
+        switch (status_code) {
+            case 0:
+                System.out.println("Stops normally");
+            case -1:
+                System.out.println("Interrupt");
+            default:
+                System.out.println(String.format("Exit with code %d", status_code));
+        }
     }
 }

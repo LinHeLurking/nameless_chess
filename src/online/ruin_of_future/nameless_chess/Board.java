@@ -1,79 +1,99 @@
 package online.ruin_of_future.nameless_chess;
 
+import javafx.util.Pair;
+
 import java.util.ArrayList;
 
 public class Board extends Graph {
-	private int INNER_CNT = 49;
-	private int TOTAL_CNT = 77;
-	
-	Board() {
-		super(80);
-		for (int i = 1; i <= INNER_CNT; ++i) {
-			int j;
-			if ((j = i + 1) >= 1 && j <= INNER_CNT) addedge(i, j);
-			if ((j = i - 1) >= 1 && j <= INNER_CNT) addedge(i, j);
-			if ((j = i + 7) >= 1 && j <= INNER_CNT) addedge(i, j);
-			if ((j = i - 7) >= 1 && j <= INNER_CNT) addedge(i, j);
-		}
-		int[] tmp_pos = {11, 23, 27, 39};
-		int[] offset = {-6, -8, 6, 8};
-		for (int i : tmp_pos) {
-			for (int j : offset) {
-				addedge(i, i + j);
-			}
-		}
-		addedge(1, 50);
-		addedge(51, 50);
-		addedge(51, 52);
-		addedge(53, 52);
-		addedge(53, 4);
-		addedge(53, 54);
-		addedge(55, 54);
-		addedge(55, 56);
-		addedge(7, 56);
-		addedge(7, 57);
-		addedge(58, 57);
-		addedge(58, 59);
-		addedge(60, 59);
-		addedge(60, 28);
-		addedge(60, 61);
-		addedge(62, 61);
-		addedge(62, 63);
-		addedge(49, 63);
-		addedge(49, 64);
-		addedge(65, 64);
-		addedge(66, 64);
-		addedge(66, 67);
-		addedge(46, 67);
-		addedge(68, 67);
-		addedge(68, 69);
-		addedge(70, 69);
-		addedge(70, 43);
-		addedge(71, 43);
-		addedge(71, 72);
-		addedge(73, 72);
-		addedge(73, 74);
-		addedge(22, 74);
-		addedge(75, 74);
-		addedge(75, 76);
-		addedge(77, 76);
-		addedge(77, 1);
-	}
-	
-	public Integer[] accessible(int pos) {
-		ArrayList<Integer> __ret = new ArrayList<>();
-		for (int i = 1; i <= TOTAL_CNT; ++i) {
-			if (is_adjacent(pos, i)) {
-				__ret.add(i);
-			}
-		}
-		return (Integer[]) __ret.toArray();
-	}
-	
-	public boolean is_adjacent(int x, int y) {
-		if (x <= 0 || x > TOTAL_CNT || y <= 0 || y >= TOTAL_CNT) {
-			return false;
-		}
-		return super.is_adjacent(x, y);
-	}
+    private static int TOTAL_CNT = 121;
+
+    private int get_label(Pair<Integer, Integer> pair) {
+        return pair.getKey() * 11 + pair.getValue();
+    }
+
+    Board() {
+        super(TOTAL_CNT);
+        for (int i = 2; i < 8; ++i) {
+            for (int j = 2; j < 8; ++j) {
+                add_edge(get_label(new Pair<>(i, j)), get_label(new Pair<>(i, j + 1)));
+                add_edge(get_label(new Pair<>(i, j)), get_label(new Pair<>(i + 1, j)));
+
+            }
+        }
+        for (int i = 2; i < 8; ++i) {
+            add_edge(get_label(new Pair<>(8, i)), get_label(new Pair<>(8, i + 1)));
+        }
+        for (int j = 2; j < 8; ++j) {
+            add_edge(get_label(new Pair<>(8, j)), get_label(new Pair<>(9, j + 1)));
+        }
+        // link special points manually
+        add_edge(get_label(new Pair<>(0, 2)), get_label(new Pair<>(2, 2)));
+        add_edge(get_label(new Pair<>(0, 2)), get_label(new Pair<>(0, 4)));
+        add_edge(get_label(new Pair<>(0, 4)), get_label(new Pair<>(1, 4)));
+        add_edge(get_label(new Pair<>(1, 5)), get_label(new Pair<>(1, 4)));
+        add_edge(get_label(new Pair<>(1, 5)), get_label(new Pair<>(1, 6)));
+        add_edge(get_label(new Pair<>(0, 6)), get_label(new Pair<>(1, 6)));
+        add_edge(get_label(new Pair<>(0, 6)), get_label(new Pair<>(0, 8)));
+        add_edge(get_label(new Pair<>(2, 8)), get_label(new Pair<>(0, 8)));
+        add_edge(get_label(new Pair<>(2, 8)), get_label(new Pair<>(2, 10)));
+        add_edge(get_label(new Pair<>(4, 10)), get_label(new Pair<>(2, 10)));
+        add_edge(get_label(new Pair<>(4, 10)), get_label(new Pair<>(4, 9)));
+        add_edge(get_label(new Pair<>(5, 9)), get_label(new Pair<>(4, 9)));
+        add_edge(get_label(new Pair<>(5, 9)), get_label(new Pair<>(6, 9)));
+        add_edge(get_label(new Pair<>(6, 10)), get_label(new Pair<>(6, 9)));
+        add_edge(get_label(new Pair<>(6, 10)), get_label(new Pair<>(8, 10)));
+        add_edge(get_label(new Pair<>(8, 8)), get_label(new Pair<>(8, 10)));
+        add_edge(get_label(new Pair<>(8, 8)), get_label(new Pair<>(10, 8)));
+        add_edge(get_label(new Pair<>(10, 6)), get_label(new Pair<>(10, 8)));
+        add_edge(get_label(new Pair<>(10, 6)), get_label(new Pair<>(9, 6)));
+        add_edge(get_label(new Pair<>(9, 5)), get_label(new Pair<>(9, 6)));
+        add_edge(get_label(new Pair<>(9, 5)), get_label(new Pair<>(9, 4)));
+        add_edge(get_label(new Pair<>(10, 4)), get_label(new Pair<>(9, 4)));
+        add_edge(get_label(new Pair<>(10, 4)), get_label(new Pair<>(10, 2)));
+        add_edge(get_label(new Pair<>(8, 2)), get_label(new Pair<>(10, 2)));
+        add_edge(get_label(new Pair<>(8, 2)), get_label(new Pair<>(8, 0)));
+        add_edge(get_label(new Pair<>(6, 0)), get_label(new Pair<>(8, 0)));
+        add_edge(get_label(new Pair<>(6, 0)), get_label(new Pair<>(6, 1)));
+        add_edge(get_label(new Pair<>(5, 1)), get_label(new Pair<>(6, 1)));
+        add_edge(get_label(new Pair<>(5, 1)), get_label(new Pair<>(4, 1)));
+        add_edge(get_label(new Pair<>(4, 0)), get_label(new Pair<>(4, 1)));
+        add_edge(get_label(new Pair<>(4, 0)), get_label(new Pair<>(2, 0)));
+
+        // link cross edge manually
+        ArrayList<Pair<Integer, Integer>> to_process = new ArrayList<>();
+        to_process.add(new Pair<>(3, 5));
+        to_process.add(new Pair<>(5, 3));
+        to_process.add(new Pair<>(5, 7));
+        to_process.add(new Pair<>(7, 5));
+        int[] x = {-1, 1};
+        int[] y = {-1, 1};
+        for (Pair<Integer, Integer> p : to_process) {
+            for (int i : x) {
+                for (int j : y) {
+                    add_edge(get_label(p), get_label(new Pair<>(p.getKey() + i, p.getValue() + j)));
+                }
+            }
+        }
+    }
+
+    public Integer[] accessible(int pos) {
+        ArrayList<Integer> __ret = new ArrayList<>();
+        for (int i = 1; i <= TOTAL_CNT; ++i) {
+            if (is_adjacent(pos, i)) {
+                __ret.add(i);
+            }
+        }
+        return (Integer[]) __ret.toArray();
+    }
+
+    public boolean is_adjacent(int x, int y) {
+        if (x < 0 || x >= TOTAL_CNT || y < 0 || y > TOTAL_CNT) {
+            return false;
+        }
+        return super.is_adjacent(x, y);
+    }
+
+    public boolean is_adjacent(Pair<Integer, Integer> a, Pair<Integer, Integer> b) {
+        return is_adjacent(get_label(a), get_label(b));
+    }
 }
