@@ -56,7 +56,6 @@ class Battle {
 
         @Override
         public void moveto(int destination) throws MoveException {
-
             if (board.is_adjacent(this.pos, destination)) {
                 if (board.what_in_pos.get(destination) != null) {
                     if (board.what_in_pos.get(destination).owner != this.owner) {

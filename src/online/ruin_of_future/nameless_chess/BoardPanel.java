@@ -9,4 +9,6 @@ public class BoardPanel extends GridPane {
 	BoardPanel(View view) {
 		this.view = view;
 	}
+
+
 }

@@ -39,7 +39,8 @@ public class View implements EventHandler<ActionEvent> {
 		Menu menu;
 		MenuItem menuItem;
 		menu = new Menu("Game");
-		
+
+		// can these similar work be finished by a function?
 		menuItem = new MenuItem("New Game");
 		menuItem.setId("New Game");
 		menuItem.setOnAction(this);
