@@ -10,7 +10,7 @@ public class Console {
             case -1:
                 System.out.println("Interrupt");
             default:
-                System.out.println(String.format("Exit with code %d", status_code));
+                System.out.println(String.format("Exit with index %d", status_code));
         }
     }
 

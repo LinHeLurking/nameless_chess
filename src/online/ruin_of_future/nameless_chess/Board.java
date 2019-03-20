@@ -7,8 +7,12 @@ import java.util.ArrayList;
 public class Board extends Graph {
     private static int TOTAL_CNT = 121;
 
-    private int get_label(Pair<Integer, Integer> pair) {
+    public int get_label(Pair<Integer, Integer> pair) {
         return pair.getKey() * 11 + pair.getValue();
+    }
+
+    public int get_lable(int x, int y) {
+        return x * 11 + y;
     }
 
     Board() {
