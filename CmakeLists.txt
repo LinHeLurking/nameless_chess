@@ -1,0 +1,15 @@
+cmake_minimum_required (VERSION 3.8)
+
+set(CMAKE_SUPPRESS_REGENERATION true)
+
+
+find_package(JNI)
+
+if (JNI_FOUND)
+    message (STATUS "JNI_INCLUDE_DIRS=${JNI_INCLUDE_DIRS}")
+    message (STATUS "JNI_LIBRARIES=${JNI_LIBRARIES}")
+endif()
+
+include_directories(${JNI_INCLUDE_DIRS})
+
+add_library (nameless_chess_cpp SHARED "c_src/Main.h" "c_src/test_main.cpp" "c_src/matrix.h" "c_src/Chess_Board.h" "c_src/Chess_Board.cpp" "c_src/game.h" "c_src/game.cpp" "c_src/message.h" "c_src/dep.h")
