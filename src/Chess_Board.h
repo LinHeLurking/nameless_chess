@@ -14,9 +14,11 @@ private:
 	char hori_occ = '-';
 	int add_edge(int i1, int j1, int i2, int j2);
 
+
 protected:
 	Matrix<int> adj;
 	Matrix<char> bat;
+
 	
 	
 
@@ -32,5 +34,6 @@ public:
 	pair<int, int> pos_decode(int pos);
 	bool is_adj(int a, int b);
 	bool player_piece_match(int player, int pos);
+	int piece_cnt[4] = { 7,7,7,7 };
 };
 

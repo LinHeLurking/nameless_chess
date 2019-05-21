@@ -1,6 +1,7 @@
 #include <string>
 #include <sstream>
-#include "Chess_Board.h"
+#include <algorithm>
+#include "dep.h"
 using namespace std;
 
 Chess_Board::Chess_Board()
@@ -24,61 +25,50 @@ Chess_Board::Chess_Board()
 			
 		}
 	}
-	add_edge(2, 2, 1, 2);
-	add_edge(1, 2, 0, 2);
-	add_edge(0, 3, 0, 2);
-	add_edge(0, 3, 0, 4);
+
+	add_edge(2, 2, 0, 2);
+	add_edge(0, 2, 0, 4);
 	add_edge(1, 4, 0, 4);
 	add_edge(1, 4, 1, 5);
+	add_edge(1, 5, 2, 5);
 	add_edge(1, 6, 1, 5);
 	add_edge(1, 6, 0, 6);
-	add_edge(0, 7, 0, 6);
-	add_edge(0, 7, 0, 8);
-	add_edge(1, 8, 0, 8);
-	add_edge(1, 8, 2, 8);
-	add_edge(1, 5, 2, 5);
+	add_edge(0, 6, 0, 8);
+	add_edge(0, 8, 2, 8);
+	
 
-	add_edge(2, 8, 2, 9);
-	add_edge(2, 10, 2, 9);
-	add_edge(3, 10, 2, 10);
-	add_edge(3, 10, 4, 10);
+	add_edge(2, 10, 2, 8);
+	add_edge(2, 10, 4, 10);
 	add_edge(4, 9, 4, 10);
 	add_edge(4, 9, 5, 9);
+	add_edge(5, 8, 5, 9);
 	add_edge(6, 9, 5, 9);
 	add_edge(6, 9, 6, 10);
-	add_edge(7, 10, 6, 10);
-	add_edge(7, 10, 8, 10);
-	add_edge(8, 9, 8, 10);
-	add_edge(8, 9, 8, 8);
-	add_edge(5, 8, 5, 9);
+	add_edge(6, 10, 8, 10);
+	add_edge(8, 10, 8, 8);
+	
 
-	add_edge(8, 8, 9, 8);
-	add_edge(10, 8, 9, 8);
-	add_edge(10, 8, 10, 7);
-	add_edge(10, 6, 10, 7);
+	add_edge(10, 8, 8, 8);
+	add_edge(10, 6, 10, 8);
 	add_edge(10, 6, 9, 6);
 	add_edge(9, 5, 9, 6);
+	add_edge(8, 5, 9, 5);
 	add_edge(9, 5, 9, 4);
 	add_edge(10, 4, 9, 4);
-	add_edge(10, 4, 10, 3);
-	add_edge(10, 2, 10, 3);
-	add_edge(10, 2, 9, 2);
-	add_edge(8, 2, 9, 2);
-	add_edge(8, 5, 9, 5);
+	add_edge(10, 2, 10, 4);
+	add_edge(8, 2, 10, 2);
+	
 
-	add_edge(8, 2, 8, 1);
-	add_edge(8, 0, 8, 1);
-	add_edge(8, 0, 7, 0);
-	add_edge(6, 0, 7, 0);
+	add_edge(8, 0, 8, 2);
+	add_edge(8, 0, 6, 0);
 	add_edge(6, 0, 6, 1);
 	add_edge(5, 1, 6, 1);
+	add_edge(5, 1, 5, 2);
 	add_edge(5, 1, 4, 1);
 	add_edge(4, 0, 4, 1);
-	add_edge(4, 0, 3, 0);
-	add_edge(2, 0, 3, 0);
-	add_edge(2, 0, 2, 1);
-	add_edge(2, 2, 2, 1);
-	add_edge(5, 1, 5, 2);
+	add_edge(4, 0, 2, 0);
+	add_edge(2, 0, 2, 2);
+	
 
 	int tmp[][2] = {
 		{3,5},
@@ -181,45 +171,108 @@ bool Chess_Board::player_piece_match(int player, int pos)
 }
 
 int Chess_Board::drawbaord() {
-	vector<stringstream> ss(25);
+	vector<stringstream> ss(size * 2 + 5);
 	int cnt = 0;
+	ss[cnt] << "    ";
+	for (int i = 0; i < size; ++i) {
+		ss[cnt] << (char)('A' + i);
+		ss[cnt] << "   ";
+	}
+	ss[cnt++] << endl;
+
+	for (int i = 1; i < 2 * size; ++i) {
+		if (i &1) {
+			ss[i] << i/2;
+			if (i/2 < 10)ss[i] << "   ";
+			else ss[i] << "  ";
+		}
+		else {
+			ss[i] << "    ";
+		}
+			
+	}
+	int vert_fac = 2;
+	int hori_fac = 4;
+	
+	Matrix<char> tmp_board(size * vert_fac, size * hori_fac, ' ');
+	for (int i = 0; i < size * size; ++i) {
+		for (int j = 0; j < size * size; ++j) {
+			if (is_adj(i, j)) {
+				pair<int, int> cor1 = pos_decode(i);
+				pair<int, int> cor2 = pos_decode(j);
+				try {
+					if (cor1.first == cor2.first) {
+						for (int j = hori_fac*min(cor1.second, cor2.second)+1; j < hori_fac*max(cor1.second, cor2.second); ++j) {
+							tmp_board[cor1.first*vert_fac][j] = '-';
+						}
+					}
+					else if (cor1.second == cor2.second) {
+						for (int i = vert_fac*min(cor1.first, cor2.first)+1; i < vert_fac*max(cor1.first, cor2.first); ++i) {
+							tmp_board[i][cor1.second*hori_fac] = '|';
+						}
+					}
+					else {
+						if (abs(cor1.first - cor2.first) == 1 && abs(cor1.second - cor2.second) == 1) {
+							pair<int, int> left = cor1, right = cor2;
+							if (left.second > right.second)swap(left, right);
+							if (left.first > right.first) {
+								tmp_board[right.first * vert_fac + 1][left.second * hori_fac + 2] = '/';
+							}
+							else {
+								tmp_board[left.first * vert_fac + 1][left.second * hori_fac + 2] = '\\';
+							}
+						}
+						else {
+							throw board_edge_exeption();
+						}
+						
+					}
+				}
+				catch (const board_edge_exeption & e) {
+					cout << e.what() << endl;
+					cout << cor1.first << "," << cor1.second << " ";
+					cout << cor2.first << "," << cor2.second << endl;
+				}
+			}
+			
+		}
+	}
+
+	
+
 	for (int i = 0; i < size; ++i) {
 		for (int j = 0; j < size; ++j) {
-			ss[cnt] << bat[i][j];
-			if (j < size - 1) {
-				if (adj[pos_encode(i, j)][pos_encode(i, j + 1)]) {
-					ss[cnt] << hori;
-				}
-				else {
-					ss[cnt] << hori_nothing;
-				}
+			if (is_piece(pos_encode(i, j))) {
+				tmp_board[i * vert_fac][j * hori_fac] = in_pos(pos_encode(i, j));
 			}
 		}
-		++cnt;
-		for (int j = 0; j < size; ++j) {
-			if (i < size - 1) {
-				if (i + 1 < size && j + 1 < size && adj[pos_encode(i, j)][pos_encode(i + 1, j + 1)]) {
-					ss[cnt] << oblique_a;
-				}
-				else if (i > 0 && j + 1 < size && adj[pos_encode(i + 1, j)][pos_encode(i, j + 1)]) {
-					ss[cnt] << oblique_b;
-				}
-				else if (adj[pos_encode(i, j)][pos_encode(i + 1, j)]) {
-					ss[cnt] << vert;
-				}
-				else {
-					ss[cnt] << vert_nothing;
-				}
-			}
+	}
+
+	/*
+	cout << "<<<" << endl;
+	cout << tmp_board << endl;
+	cout << "<<<" << endl;
+	*/
+
+	for (int i = 0; i < vert_fac * size; ++i) {
+		for (int j = 0; j < size * hori_fac; ++j) {
+			ss[i+1] << tmp_board[i][j];
 		}
-		
-		++cnt;
 	}
 
-	for (int i = 0; i < size * 2; i += 2) {
-		ss[i] << "     " << i / 2;
-	}
+	for (int i = 1; i < 2 * size; ++i) {
+		ss[i] << "    ";
+		if (i & 1) {
+			ss[i] << i / 2;
+			if (i < 10)ss[i] << "   ";
+			else ss[i] << "  ";
+		}
+		else {
+			ss[i] << "    ";
+		}
 
+	}
+	ss[size * 2 + 1] << "    ";
 	for (int j = 0; j < size; ++j) {
 		ss[size * 2 + 1] << (char)(j + 'A') << "   ";
 	}
@@ -250,5 +303,6 @@ bool Chess_Board::is_piece(int pos) {
 
 char& Chess_Board::in_pos(int pos) {
 	pair<int, int> cor = pos_decode(pos);
+	//cout << "[] checking " << pos << " " << bat[cor.first][cor.second] << endl;
 	return bat[cor.first][cor.second];
 }
