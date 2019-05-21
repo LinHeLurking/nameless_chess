@@ -170,7 +170,7 @@ bool Chess_Board::player_piece_match(int player, int pos)
 	return in_pos(pos) == piece[player];
 }
 
-int Chess_Board::drawbaord() {
+int Chess_Board::drawboard() {
 	vector<stringstream> ss(size * 2 + 5);
 	int cnt = 0;
 	ss[cnt] << "    ";

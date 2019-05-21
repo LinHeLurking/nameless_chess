@@ -88,7 +88,7 @@ int Game::single_gamer_loop(int player) {
 		return 0;
 	}
 	int from = 0;
-	board.drawbaord();
+	board.drawboard();
 	// show delayed msseages
 	msg.refresh();
 	int ret;
@@ -135,7 +135,7 @@ int Game::single_gamer_loop(int player) {
 		
 	}
 	if (player_role[cur_player] == computer) {
-		std::this_thread::sleep_for(std::chrono::milliseconds(50));
+		std::this_thread::sleep_for(std::chrono::milliseconds(500));
 	}
 	return ret;
 }
@@ -153,8 +153,10 @@ int Game::game_loop() {
 			for (int i = 0; i < player_cnt; ++i) {
 				if (!board.piece_cnt[i])++zero_cnt;
 			}
-			if (zero_cnt == 3) {
-				msg << "[] only one player survives, game ends" << endl;
+			if (zero_cnt >= 2) {
+				msg << "* plyaer remained <= 2 , the game ends" << endl;
+				board.drawboard();
+				msg.refresh();
 				break;
 			}
 		}

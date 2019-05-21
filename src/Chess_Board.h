@@ -26,7 +26,7 @@ public:
 	Chess_Board();
 	~Chess_Board();
 	static const int size = 11;
-	int drawbaord();
+	int drawboard();
 	vector<char> piece;
 	bool is_piece(int pos);
 	char& in_pos(int pos);
