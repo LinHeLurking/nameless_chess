@@ -1,36 +1,33 @@
 package online.ruin_of_future.nameless_chess;
 
 import javafx.event.*;
-import javafx.scene.*;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.*;
+import javafx.stage.Stage;
 
 
 public class View implements EventHandler<ActionEvent> {
 	
-	private Stage stage;
-	private StartPanel start;
-	private BoardPanel board;
 	private BorderPane root;
+	private StartPanel startPanel;
+	private BoardPanel boardPanel;
 	
 	View(Stage stage) {
-		this.stage = stage;
-		this.start = new StartPanel(this);
-		this.board = new BoardPanel(this);
-		initUI(this.stage);
+		this.init(stage);
 	}
 	
-	private void initUI(Stage stage) {
+	private void init(Stage stage) {
+		this.startPanel = new StartPanel(this);
+		this.boardPanel = new BoardPanel(this);
+		
 		this.root = new BorderPane();
 		this.root.setTop(this.createMenuBar());
-		this.root.setCenter(this.start);
+		this.root.setCenter(this.startPanel);
 		
-		Scene scene = new Scene(this.root);
+		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Nameless Chess");
-		stage.setResizable(true);
-		
 		stage.show();
 	}
 	
@@ -38,16 +35,22 @@ public class View implements EventHandler<ActionEvent> {
 		MenuBar menuBar = new MenuBar();
 		Menu menu;
 		MenuItem menuItem;
+		
+		//Creates a new menu for the game option
 		menu = new Menu("Game");
-
-		// can these similar work be finished by a function?
+		
 		menuItem = new MenuItem("New Game");
 		menuItem.setId("New Game");
 		menuItem.setOnAction(this);
 		menu.getItems().add(menuItem);
 		
-		menuItem = new MenuItem("Quit");
-		menuItem.setId("Quit");
+		menuItem = new MenuItem("Help");
+		menuItem.setId("Help");
+		menuItem.setOnAction(this);
+		menu.getItems().add(menuItem);
+		
+		menuItem = new MenuItem("Main Menu");
+		menuItem.setId("Main Menu");
 		menuItem.setOnAction(this);
 		menu.getItems().add(menuItem);
 		
@@ -59,32 +62,36 @@ public class View implements EventHandler<ActionEvent> {
 		menu.getItems().add(menuItem);
 		
 		menuBar.getMenus().add(menu);
+		
 		return menuBar;
 	}
 	
 	void changeToBoard() {
-		this.root.setCenter(this.board);
+		System.out.println("Start");
+		this.root.setCenter(this.boardPanel);
 	}
 	
-	private void createNewGame() {
-		this.board = new BoardPanel(this);
-		this.root.setCenter(this.board);
+	void createNewGame() {
+		System.out.println("New");
+		this.boardPanel = new BoardPanel(this);
+		this.root.setCenter(this.boardPanel);
 	}
 	
-	private void changeToStart() {
-		this.root.setCenter(this.start);
+	void backToStart() {
+		System.out.println("Home");
+		this.root.setCenter(this.startPanel);
 	}
 	
 	@Override
 	public void handle(ActionEvent event) {
-		String command = ((MenuItem) event.getSource()).getId();
+		String command = ((MenuItem)event.getSource()).getText();
+		System.out.println(command);
 		switch (command) {
 			case "New Game":
 				this.createNewGame();
 				break;
-			case "Quit":
-				this.createNewGame();
-				this.changeToStart();
+			case "Main Menu":
+				this.backToStart();
 				break;
 			case "Exit":
 				System.exit(0);
