@@ -170,7 +170,7 @@ bool Chess_Board::player_piece_match(int player, int pos)
 	return in_pos(pos) == piece[player];
 }
 
-int Chess_Board::drawbaord() {
+int Chess_Board::drawboard() {
 	vector<stringstream> ss(size * 2 + 5);
 	int cnt = 0;
 	ss[cnt] << "    ";
@@ -213,7 +213,14 @@ int Chess_Board::drawbaord() {
 					}
 					else {
 						if (abs(cor1.first - cor2.first) == 1 && abs(cor1.second - cor2.second) == 1) {
-
+							pair<int, int> left = cor1, right = cor2;
+							if (left.second > right.second)swap(left, right);
+							if (left.first > right.first) {
+								tmp_board[right.first * vert_fac + 1][left.second * hori_fac + 2] = '/';
+							}
+							else {
+								tmp_board[left.first * vert_fac + 1][left.second * hori_fac + 2] = '\\';
+							}
 						}
 						else {
 							throw board_edge_exeption();

@@ -26,7 +26,7 @@ public:
 	Chess_Board();
 	~Chess_Board();
 	static const int size = 11;
-	int drawbaord();
+	int drawboard();
 	vector<char> piece;
 	bool is_piece(int pos);
 	char& in_pos(int pos);
@@ -34,5 +34,6 @@ public:
 	pair<int, int> pos_decode(int pos);
 	bool is_adj(int a, int b);
 	bool player_piece_match(int player, int pos);
+	int piece_cnt[4] = { 7,7,7,7 };
 };
 
