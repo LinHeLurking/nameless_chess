@@ -13,10 +13,12 @@ public class StartPanel extends StackPane implements EventHandler<ActionEvent> {
 	
 	StartPanel(View view) {
 		this.view = view;
-		
-		Canvas canvas = new Canvas(500, 500);
+		this.init();
+	}
+	
+	private void init() {
+		Canvas canvas = new Canvas(550, 550);
 		this.getChildren().add(canvas);
-		this.setStyle("-fx-background-color: pink");
 		
 		Button button = new Button("Start");
 		button.setMinWidth(100);
@@ -25,10 +27,6 @@ public class StartPanel extends StackPane implements EventHandler<ActionEvent> {
 		
 		this.getChildren().add(button);
 		setAlignment(button, Pos.BOTTOM_CENTER);
-		
-		Label label = new Label();
-		label.setMinWidth(200);
-		label.setPrefHeight(100);
 	}
 	
 	@Override

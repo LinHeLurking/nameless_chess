@@ -26,6 +26,7 @@ public class View implements EventHandler<ActionEvent> {
 		this.root.setCenter(this.startPanel);
 		
 		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
 		stage.setScene(scene);
 		stage.setTitle("Nameless Chess");
 		stage.show();
@@ -36,7 +37,6 @@ public class View implements EventHandler<ActionEvent> {
 		Menu menu;
 		MenuItem menuItem;
 		
-		//Creates a new menu for the game option
 		menu = new Menu("Game");
 		
 		menuItem = new MenuItem("New Game");
@@ -71,13 +71,13 @@ public class View implements EventHandler<ActionEvent> {
 		this.root.setCenter(this.boardPanel);
 	}
 	
-	void createNewGame() {
+	private void createNewGame() {
 		System.out.println("New");
 		this.boardPanel = new BoardPanel(this);
 		this.root.setCenter(this.boardPanel);
 	}
 	
-	void backToStart() {
+	private void backToStart() {
 		System.out.println("Home");
 		this.root.setCenter(this.startPanel);
 	}
