@@ -5,12 +5,11 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity"
-          minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0"
-          xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane id="board" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+
 	<columnConstraints>
-		<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
 		<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
 		<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
 		<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -37,44 +36,314 @@
 		<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
 	</rowConstraints>
 	<children>
-		<Button alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-		<Button alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="68.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-		<Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-		<Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-		<Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="206.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-		<Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
-		<Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
-		<Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
-		<Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
-		<Button alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="21.0" layoutY="22.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="1" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="22.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="6" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="22.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="5" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="22.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="4" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="22.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="3" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="22.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="2" />
-		<Button alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="280.0" layoutY="22.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-		<Button alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="280.0" layoutY="22.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="10" />
-		<Button alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="280.0" layoutY="22.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="11" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="280.0" layoutY="22.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="9" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="280.0" layoutY="22.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="8" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="280.0" layoutY="22.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="7" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="51.0" layoutY="68.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="51.0" layoutY="68.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-		<Button alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="51.0" layoutY="68.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-		<Button alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="51.0" layoutY="68.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-		<Button alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="216.0" layoutY="68.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="10" GridPane.rowIndex="1" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="216.0" layoutY="68.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="9" GridPane.rowIndex="1" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="216.0" layoutY="68.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="8" GridPane.rowIndex="1" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="216.0" layoutY="68.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="216.0" layoutY="68.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-		<Button alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="426.0" layoutY="68.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="11" GridPane.rowIndex="1" />
-		<Button alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="92.0" layoutY="68.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="133.0" layoutY="68.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="92.0" layoutY="68.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="92.0" layoutY="68.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="92.0" layoutY="68.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+		<Button id="init-1" alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="68.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="2 0" textFill="TRANSPARENT" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button id="init-1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="4 1" textFill="TRANSPARENT" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button id="init-1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="4 0" textFill="TRANSPARENT" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="7 2" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button id="init-1" alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="206.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="6 0" textFill="TRANSPARENT" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="6 2" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button id="init-1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="8 0" textFill="TRANSPARENT" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button id="init-0" alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="22.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="0 6" textFill="TRANSPARENT" GridPane.columnIndex="6" GridPane.halignment="CENTER">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button id="init-0" alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="22.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="0 4" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.halignment="CENTER">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button id="init-0" alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="22.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="0 2" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="280.0" layoutY="22.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="3 8" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="280.0" layoutY="22.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="3 2" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button id="init-0" alignment="CENTER" contentDisplay="CENTER" layoutX="280.0" layoutY="22.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="0 8" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.halignment="CENTER">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button id="init-0" alignment="CENTER" contentDisplay="CENTER" layoutX="51.0" layoutY="68.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="1 5" textFill="TRANSPARENT" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button id="init-0" alignment="CENTER" contentDisplay="CENTER" layoutX="51.0" layoutY="68.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="1 4" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button id="init-2" alignment="CENTER" contentDisplay="CENTER" layoutX="216.0" layoutY="68.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="2 10" textFill="TRANSPARENT" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button id="init-0" alignment="CENTER" contentDisplay="CENTER" layoutX="216.0" layoutY="68.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="1 6" textFill="TRANSPARENT" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="92.0" layoutY="68.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="4 2" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="133.0" layoutY="68.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="2 5" textFill="TRANSPARENT" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="92.0" layoutY="68.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="2 4" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="92.0" layoutY="68.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="2 3" textFill="TRANSPARENT" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="92.0" layoutY="68.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="2 2" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="226.0" layoutY="114.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="2 6" textFill="TRANSPARENT" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="268.0" layoutY="114.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="2 7" textFill="TRANSPARENT" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="310.0" layoutY="114.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="2 8" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button id="init-1" alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="386.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="5 1" textFill="TRANSPARENT" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+		<Button id="init-1" alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="431.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="6 1" textFill="TRANSPARENT" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="476.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="7 8" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="418.0" layoutY="431.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="6 8" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button id="init-2" alignment="CENTER" contentDisplay="CENTER" layoutX="418.0" layoutY="431.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="8 10" textFill="TRANSPARENT" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="464.0" layoutY="431.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="4 8" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="66.0" layoutY="431.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="8 2" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="111.0" layoutY="386.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="8 8" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="5 5" textFill="TRANSPARENT" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="235.0" layoutY="251.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="5 8" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="372.0" layoutY="251.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="5 2" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button id="init-3" alignment="CENTER" contentDisplay="CENTER" layoutX="111.0" layoutY="114.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="10 2" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="10">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="111.0" layoutY="114.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="8 5" textFill="TRANSPARENT" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button id="init-3" alignment="CENTER" contentDisplay="CENTER" layoutX="235.0" layoutY="386.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="10 4" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="10">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button id="init-3" alignment="CENTER" contentDisplay="CENTER" layoutX="235.0" layoutY="386.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="9 4" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="9">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button id="init-3" alignment="CENTER" contentDisplay="CENTER" layoutX="190.0" layoutY="431.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="9 5" textFill="TRANSPARENT" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="9">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button id="init-3" alignment="CENTER" contentDisplay="CENTER" layoutX="235.0" layoutY="431.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="9 6" textFill="TRANSPARENT" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="9">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button id="init-3" alignment="CENTER" contentDisplay="CENTER" layoutX="235.0" layoutY="431.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="10 6" textFill="TRANSPARENT" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="10">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="280.0" layoutY="431.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="8 3" textFill="TRANSPARENT" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="292.0" layoutY="431.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="8 4" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="246.0" layoutY="386.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="8 6" textFill="TRANSPARENT" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="280.0" layoutY="386.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="8 7" textFill="TRANSPARENT" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button id="init-3" alignment="CENTER" contentDisplay="CENTER" layoutX="372.0" layoutY="431.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="10 8" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="10">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button id="init-2" alignment="CENTER" contentDisplay="CENTER" layoutX="476.0" layoutY="114.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="5 9" textFill="TRANSPARENT" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button id="init-2" alignment="CENTER" contentDisplay="CENTER" layoutX="418.0" layoutY="251.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="4 9" textFill="TRANSPARENT" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button id="init-2" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="4 10" textFill="TRANSPARENT" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button id="init-2" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="6 9" textFill="TRANSPARENT" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button id="init-2" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="6 10" textFill="TRANSPARENT" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="111.0" layoutY="114.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="3 3" textFill="TRANSPARENT" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="145.0" layoutY="160.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="3 4" textFill="#00000004" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="145.0" layoutY="160.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="4 3" textFill="TRANSPARENT" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="145.0" layoutY="206.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="5 3" textFill="TRANSPARENT" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="145.0" layoutY="206.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="6 3" textFill="TRANSPARENT" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="145.0" layoutY="251.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="7 3" textFill="TRANSPARENT" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="145.0" layoutY="296.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="4 4" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="145.0" layoutY="206.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="5 4" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="145.0" layoutY="160.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="6 4" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="145.0" layoutY="296.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="7 4" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="190.0" layoutY="160.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="3 5" textFill="TRANSPARENT" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="190.0" layoutY="160.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="3 6" textFill="TRANSPARENT" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="235.0" layoutY="160.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="3 7" textFill="TRANSPARENT" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="190.0" layoutY="206.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="4 5" textFill="TRANSPARENT" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="190.0" layoutY="206.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="4 6" textFill="TRANSPARENT" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="280.0" layoutY="206.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="4 7" textFill="TRANSPARENT" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="280.0" layoutY="206.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="5 6" textFill="TRANSPARENT" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="280.0" layoutY="206.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="5 7" textFill="TRANSPARENT" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="280.0" layoutY="251.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="6 5" textFill="TRANSPARENT" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="235.0" layoutY="296.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="6 6" textFill="TRANSPARENT" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="235.0" layoutY="296.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="6 7" textFill="TRANSPARENT" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="235.0" layoutY="296.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="7 5" textFill="TRANSPARENT" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="235.0" layoutY="296.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="7 6" textFill="TRANSPARENT" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="280.0" layoutY="341.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="23.0" prefWidth="23.0" stylesheets="@style.css" text="7 7" textFill="TRANSPARENT" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
 	</children>
 	<cursor>
 		<Cursor fx:constant="DEFAULT" />

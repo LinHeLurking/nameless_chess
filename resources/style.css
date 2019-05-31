@@ -12,9 +12,41 @@
 	-fx-background-position: center center;
 }
 
+#start {
+	-fx-background-color: lightgreen;
+}
+#start:hover {
+	-fx-background-color: lightskyblue;
+}
+
+#init-0 {
+	-fx-background-color: green;
+}
+#init-0:hover {
+	-fx-background-color: black;
+}
+#init-1 {
+	-fx-background-color: blue;
+}
+#init-1:hover {
+	-fx-background-color: black;
+}
+#init-2 {
+	-fx-background-color: red;
+}
+#init-2:hover {
+	-fx-background-color: black;
+}
+#init-3 {
+	-fx-background-color: yellow;
+}
+#init-3:hover {
+	-fx-background-color: black;
+}
+
 /*button类型选择器设置所有Button的背景色*/
 .button {
-    /*-fx-background-color: transparent;*/
+    -fx-background-color: transparent;
 }
 
 /*hover伪类选择器设置鼠标移过Button时的背景色*/

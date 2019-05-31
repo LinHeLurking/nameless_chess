@@ -21,6 +21,7 @@ public class StartPanel extends StackPane implements EventHandler<ActionEvent> {
 		this.getChildren().add(canvas);
 		
 		Button button = new Button("Start");
+		button.setId("start");
 		button.setMinWidth(100);
 		button.setPrefHeight(50);
 		button.setOnAction(this);

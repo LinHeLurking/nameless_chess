@@ -12,9 +12,11 @@ public class View implements EventHandler<ActionEvent> {
 	private BorderPane root;
 	private StartPanel startPanel;
 	private BoardPanel boardPanel;
+	private Stage stage;
 	
 	View(Stage stage) {
-		this.init(stage);
+		this.stage = stage;
+		this.init(this.stage);
 	}
 	
 	private void init(Stage stage) {
@@ -68,13 +70,13 @@ public class View implements EventHandler<ActionEvent> {
 	
 	void changeToBoard() {
 		System.out.println("Start");
-		this.root.setCenter(this.boardPanel);
+		this.root.setCenter(this.boardPanel.getPanel());
 	}
 	
 	private void createNewGame() {
 		System.out.println("New");
 		this.boardPanel = new BoardPanel(this);
-		this.root.setCenter(this.boardPanel);
+		this.root.setCenter(this.boardPanel.getPanel());
 	}
 	
 	private void backToStart() {
