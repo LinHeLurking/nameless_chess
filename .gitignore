@@ -2,10 +2,5 @@
 .vscode/*
 .idea/*
 out/*
-CmakeFiles/*
-*.sln
-*.vcxproj
-*.filters
-*.cmake
-CmakeCache.txt
+build/*
 launch.json
