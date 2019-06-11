@@ -5,7 +5,7 @@ cmake_minimum_required (VERSION 3.8)
 
 
 # Add source to this project's executable.
-add_executable (nameless_chess_cpp "src/test_main.cpp" "src/matrix.h" "src/Chess_Board.h" "src/Chess_Board.cpp" "src/game.h" "src/game.cpp" "src/message.h" "src/dep.h")
+add_executable (nameless_chess_cpp "src/cppsrc/test_main.cpp" "src/cppsrc/matrix.h" "src/cppsrc/Chess_Board.h" "src/cppsrc/Chess_Board.cpp" "src/cppsrc/game.h" "src/cppsrc/game.cpp" "src/cppsrc/message.h" "src/cppsrc/dep.h")
 
 # TODO: Add tests and install targets if needed.
 

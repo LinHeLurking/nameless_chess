@@ -1,3 +1,11 @@
 .vs/*
+.vscode/*
 .idea/*
 out/*
+CmakeFiles/*
+*.sln
+*.vcxproj
+*.filters
+*.cmake
+CmakeCache.txt
+launch.json
