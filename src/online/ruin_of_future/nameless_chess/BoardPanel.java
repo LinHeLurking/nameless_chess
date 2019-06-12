@@ -3,8 +3,6 @@ package online.ruin_of_future.nameless_chess;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
@@ -24,15 +22,21 @@ public class BoardPanel {
 		this.init();
 	}
 	
+	// For board.fxml loading controller
+	public BoardPanel() { }
+	
+	public void setView(View view) {
+		this.view = view;
+	}
+	
 	private void init() {
 		FXMLLoader loader = new FXMLLoader();
 		URL url = getClass().getResource("/board.fxml");
 		loader.setLocation(url);
-		loader.setController(this);
 		try {
 			this.panel = loader.load();
 		} catch (IOException e) {
-			System.out.println(e.toString());
+			e.printStackTrace();
 			System.exit(1);
 		}
 	}
