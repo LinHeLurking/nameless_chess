@@ -1,3 +1,6 @@
 .vs/*
+.vscode/*
 .idea/*
 out/*
+build/*
+launch.json
