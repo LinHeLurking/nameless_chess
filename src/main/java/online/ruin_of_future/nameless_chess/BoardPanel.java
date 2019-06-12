@@ -16,6 +16,7 @@ public class BoardPanel {
 	private GridPane panel;
 	private Button before;
 	private String c_id = null;
+
 	
 	BoardPanel(View view) {
 		this.view = view;

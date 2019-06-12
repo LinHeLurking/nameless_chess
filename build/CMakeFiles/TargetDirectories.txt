@@ -1,0 +1,2 @@
+D:/code/nameless_chess/build/CMakeFiles/nameless_chess_cpp.dir
+D:/code/nameless_chess/build/CMakeFiles/ALL_BUILD.dir

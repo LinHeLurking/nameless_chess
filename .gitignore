@@ -1,4 +1,9 @@
 .vs
 .vscode
 .idea
+.classpath
+.project
+.settings
+src/main/cpp/.vs/*
+src/main/cpp/out/*
 target
