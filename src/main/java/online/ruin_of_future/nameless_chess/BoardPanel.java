@@ -35,7 +35,7 @@ public class BoardPanel {
 		this.view = view;
 	}
 
-	public void debugLoop(){
+	void debugLoop(){
 		this.syncer.sync_unforgiving_game_loop();
 	}
 	
@@ -50,8 +50,6 @@ public class BoardPanel {
 			System.exit(1);
 		}
 	}
-
-
 	
 	GridPane getPanel() {
 		return this.panel;
