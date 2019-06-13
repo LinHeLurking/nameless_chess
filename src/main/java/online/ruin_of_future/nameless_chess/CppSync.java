@@ -69,7 +69,7 @@ public class CppSync {
 
 
 
-    // 
+    //
 
     // not finished
     public int sync_cpp_auto_move() {
