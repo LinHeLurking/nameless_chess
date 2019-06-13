@@ -98,6 +98,7 @@ public class View implements EventHandler<ActionEvent> {
 	void backToStart() {
 		System.out.println("Home");
 		this.boardPanel.endDebugLoop();
+		System.out.println("Debug loop ends");
 		this.root.setCenter(this.startPanel);
 	}
 	

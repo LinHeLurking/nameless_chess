@@ -1,5 +1,7 @@
 package online.ruin_of_future.nameless_chess;
 
+
+
 public class CppSync {
     private static String path_escape(String str) {
         char[] str_char = str.toCharArray();
@@ -15,12 +17,12 @@ public class CppSync {
         String currentDirectory = System.getProperty("user.dir");
         // System.out.println("current directory is " + currentDirectory);
         try {
-            String ldp = currentDirectory + "/lib/" + "nameless_chess_cpp.dll";
+            String ldp = currentDirectory + "/../lib/" + "nameless_chess_cpp.dll";
             ldp = path_escape(ldp);
             System.out.println("trying to loading lib in " + ldp);
             System.load(ldp);
-        } catch (Exception e) {
-            String ldp = currentDirectory + "/" + "nameless_chess_cpp";
+        } catch (UnsatisfiedLinkError e) {
+            String ldp = currentDirectory + "/lib/" + "nameless_chess_cpp.dll";
             ldp = path_escape(ldp);
             System.out.println("trying to loading lib in " + ldp);
             System.load(ldp);
