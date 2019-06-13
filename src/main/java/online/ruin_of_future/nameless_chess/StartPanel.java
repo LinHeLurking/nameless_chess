@@ -18,6 +18,7 @@ public class StartPanel extends StackPane implements EventHandler<ActionEvent> {
     }
 
     private void init() {
+        this.setId("home");
         Canvas canvas = new Canvas(550, 550);
         this.getChildren().add(canvas);
 

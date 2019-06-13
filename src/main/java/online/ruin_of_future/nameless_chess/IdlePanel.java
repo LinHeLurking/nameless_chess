@@ -20,14 +20,14 @@ class IdlePanel extends StackPane implements EventHandler<ActionEvent>{
 		Canvas canvas = new Canvas(550, 550);
 		this.getChildren().add(canvas);
 		this.setId("idle");
-		Button start_button = new Button("Home");
-		start_button.setId("home");
-		start_button.setMinWidth(100);
-		start_button.setPrefHeight(50);
-		start_button.setOnAction(this);
+		Button button = new Button("Home");
+		button.setId("back");
+		button.setMinWidth(100);
+		button.setPrefHeight(50);
+		button.setOnAction(this);
 		
-		this.getChildren().add(start_button);
-		setAlignment(start_button, Pos.BOTTOM_CENTER);
+		this.getChildren().add(button);
+		setAlignment(button, Pos.BOTTOM_CENTER);
 	}
 	
 	@Override
