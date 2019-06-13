@@ -12,15 +12,19 @@ Game::~Game() {
 
 }
 
-enum {eat, normal, error };
+
 int Game::move_piece(int from, int to) {
 	//msg << "[] trying to move piece from " << from << " to " << to << endl;
 	//pair<int, int> cor = board.pos_decode(from);
 	//msg << "[] in (" << cor.first << "," << cor.second << ") , occupy == " << board.in_pos(from) << endl;
-	if (board.is_piece(from)) {
-		auto test = board.is_adj(from, to);
+	bool check_flag = true;
+	check_flag &= board.is_piece(from);
+	check_flag &= (piece_owner(board.in_pos(from)) == cur_player);
+	if (check_flag) {
+		// auto test = board.is_adj(from, to);
+
 		if (board.is_piece(to) && board.is_adj(from,to)) {
-			board.piece_cnt[piece_role(board.in_pos(to))]--;
+			board.piece_cnt[piece_owner(board.in_pos(to))]--;
 			char& src = board.in_pos(from);
 			char __src = board.in_pos(from);
 			char& aim = board.in_pos(to);
@@ -37,7 +41,17 @@ int Game::move_piece(int from, int to) {
 	return error;
 }
 
-int Game::piece_role(char ch)
+int Game::move_piece(pair<int, int> move)
+{
+	return move_piece(move.first, move.second);
+}
+
+void Game::log(string s)
+{
+	msg << s << endl;
+}
+
+int Game::piece_owner(char ch)
 {
 	for (int i = 0; i < player_cnt; ++i) {
 		if (ch == board.piece[i])return i;
@@ -225,6 +239,7 @@ int Game::read_cmd_input()
 	return board.pos_encode(i, j);
 }
 
+// no parameters needed. return a valid move according to current player
 pair<int, int> Game::random_move()
 {
 	int i = -1, j = -1;

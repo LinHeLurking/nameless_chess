@@ -9,11 +9,19 @@ extern "C" {
 #endif
 /*
  * Class:     online_ruin_of_future_nameless_chess_CppSync
- * Method:    sync_move
+ * Method:    sync_java_manual_move
  * Signature: (IIII)I
  */
-JNIEXPORT jint JNICALL Java_online_ruin_1of_1future_nameless_1chess_CppSync_sync_1move
+JNIEXPORT jint JNICALL Java_online_ruin_1of_1future_nameless_1chess_CppSync_sync_1java_1manual_1move
   (JNIEnv *, jobject, jint, jint, jint, jint);
+
+/*
+ * Class:     online_ruin_of_future_nameless_chess_CppSync
+ * Method:    sync_cpp_auto_move__raw
+ * Signature: ()I
+ */
+JNIEXPORT jint JNICALL Java_online_ruin_1of_1future_nameless_1chess_CppSync_sync_1cpp_1auto_1move_1_1raw
+  (JNIEnv *, jobject);
 
 /*
  * Class:     online_ruin_of_future_nameless_chess_CppSync

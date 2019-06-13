@@ -9,26 +9,29 @@ using namespace std;
 class Game {
 protected:
 	int INF = 1e7;
-	int game_mode;
-	enum { zero_human, one_human, four_human };
-	enum { computer, human };
-	int cur_player;
 	Msg msg;
 	std::uniform_int_distribution<int> distribution;
 	std::default_random_engine generator;
-	int piece_role(char ch);
+	
+
+public:
+	Chess_Board board;
+	int game_mode;
+	int single_gamer_loop(int player);
+	int game_loop();
+	enum mode { zero_human, one_human, four_human };
+	enum move { eat, normal, error };
+	enum role { computer, human };
+	int player_role[4];
+	const int player_cnt = 4;
+	int cur_player;
+	int piece_owner(char ch);
 	int get_game_mode();
 	int read_cmd_input();
 	pair<int, int> random_move();
 	int move_piece(int from, int to);
-
-public:
-	Chess_Board board;
-	int single_gamer_loop(int player);
-	int game_loop();
-	
-	int player_role[4];
-	const int player_cnt = 4;
+	int move_piece(pair<int, int> move);
+	void log(string s);
 	Game();
 	~Game();
 };
