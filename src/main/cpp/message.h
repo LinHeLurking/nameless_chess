@@ -16,6 +16,12 @@ private:
 	int state = 0;
 	stringstream ss;
 public:
+	void reset() {
+		state = 0;
+		prpt_cnt = 0;
+		ss.str() = "";
+	}
+
 	template <typename type>
 	Msg& operator<<(type i) {
 		cout << i;

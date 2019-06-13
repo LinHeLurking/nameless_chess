@@ -91,3 +91,8 @@ JNIEXPORT jint JNICALL Java_online_ruin_1of_1future_nameless_1chess_CppSync_sync
 	return 0;
 }
 
+JNIEXPORT jint JNICALL Java_online_ruin_1of_1future_nameless_1chess_CppSync_sync_1forgive_1game_1loop(JNIEnv*, jobject) {
+	game.set_exit_flag(true);
+	return 0;
+}
+

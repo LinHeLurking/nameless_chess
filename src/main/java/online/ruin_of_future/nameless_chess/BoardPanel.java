@@ -38,6 +38,10 @@ public class BoardPanel {
 	void debugLoop(){
 		this.syncer.sync_unforgiving_game_loop();
 	}
+
+	void endDebugLoop(){
+		this.syncer.sync_forgive_game_loop();
+	}
 	
 	private void init() {
 		FXMLLoader loader = new FXMLLoader();

@@ -12,6 +12,8 @@ protected:
 	Msg msg;
 	std::uniform_int_distribution<int> distribution;
 	std::default_random_engine generator;
+	bool exit_flag = false;
+	void init();
 	
 
 public:
@@ -32,6 +34,7 @@ public:
 	int move_piece(int from, int to);
 	int move_piece(pair<int, int> move);
 	void log(string s);
+	void set_exit_flag(bool bv);
 	Game();
 	~Game();
 };

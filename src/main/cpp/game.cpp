@@ -4,8 +4,7 @@
 #include "game.h"
 
 Game::Game() {
-	this->board = Chess_Board();
-	this->distribution = uniform_int_distribution<int>(0, board.size * board.size - 1);
+	init();
 }
 
 Game::~Game() {
@@ -50,6 +49,11 @@ int Game::move_piece(pair<int, int> move)
 void Game::log(string s)
 {
 	msg << s << endl;
+}
+
+void Game::set_exit_flag(bool bv)
+{
+	this->exit_flag = bv;
 }
 
 int Game::piece_owner(char ch)
@@ -98,6 +102,13 @@ int Game::get_game_mode()
 }
 
 
+void Game::init()
+{
+	this->board = Chess_Board();
+	this->distribution = uniform_int_distribution<int>(0, board.size * board.size - 1);
+	msg.reset();
+}
+
 int Game::single_gamer_loop(int player) {
 	if (board.piece_cnt[player] == 0) {
 		return 0;
@@ -107,7 +118,7 @@ int Game::single_gamer_loop(int player) {
 	// show delayed msseages
 	msg.refresh();
 	int ret;
-	while (true) {
+	while (!exit_flag) {
 		msg << "[] round for player " << board.piece[player] << std::endl;
 		msg << "[] Choose the piece you want to move" << std::endl;
 		if (player_role[player] == human) {
@@ -160,7 +171,7 @@ int Game::game_loop() {
 	msg << "[] input \"quit\" || \"exit\" to leave the game at any time" << std::endl << endl;
 	game_mode = get_game_mode();
 	cur_player = 0;
-	while (true) {
+	while (!exit_flag) {
 		int result = single_gamer_loop(cur_player);
 		if (result <= -INF)return -INF;
 		else {
@@ -178,6 +189,7 @@ int Game::game_loop() {
 		cur_player = (cur_player + 1) % 4;
 		system("clear");
 	}
+	init();
 	return 0;
 }
 

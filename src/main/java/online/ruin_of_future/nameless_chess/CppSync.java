@@ -82,4 +82,6 @@ public class CppSync {
 	public native int sync_nothing();
 
 	public native int sync_unforgiving_game_loop();
+
+	public native int sync_forgive_game_loop();
 }
