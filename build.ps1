@@ -1,4 +1,4 @@
-.\clean_cpp_build.ps1
+.\clean.ps1
 .\build_cpp_via_cmake.ps1
 .\build_java_via_maven.ps1
 
