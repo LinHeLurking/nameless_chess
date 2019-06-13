@@ -6,12 +6,17 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 
 public class View implements EventHandler<ActionEvent> {
 	
 	private BorderPane root;
 	private StartPanel startPanel;
 	private BoardPanel boardPanel;
+	private IdlePanel idlePanel;
 	private Stage stage;
 	
 	View(Stage stage) {
@@ -22,6 +27,7 @@ public class View implements EventHandler<ActionEvent> {
 	private void init(Stage stage) {
 		this.startPanel = new StartPanel(this);
 		this.boardPanel = new BoardPanel(this);
+		this.idlePanel = new IdlePanel(this);
 		
 		this.root = new BorderPane();
 		this.root.setTop(this.createMenuBar());
@@ -75,7 +81,12 @@ public class View implements EventHandler<ActionEvent> {
 
 	void changeToDebug() {
 		System.out.println("Debugging");
-		this.boardPanel.debugLoop();
+		this.root.setCenter(this.idlePanel.getPanel());
+		ExecutorService threadPool = Executors.newCachedThreadPool();
+		threadPool.submit((Callable<java.lang.Object>) () -> {
+			boardPanel.debugLoop();
+			return 0;
+		});
 	}
 	
 	private void createNewGame() {

@@ -20,6 +20,7 @@ int Game::move_piece(int from, int to) {
 	bool check_flag = true;
 	check_flag &= board.is_piece(from);
 	check_flag &= (piece_owner(board.in_pos(from)) == cur_player);
+	check_flag &= (piece_owner(board.in_pos(to)) != cur_player);
 	if (check_flag) {
 		// auto test = board.is_adj(from, to);
 
