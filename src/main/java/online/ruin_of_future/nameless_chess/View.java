@@ -74,7 +74,7 @@ public class View implements EventHandler<ActionEvent> {
 	}
 
 	void changeToDebug() {
-		System.out.println("Start");
+		System.out.println("Debugging");
 		this.boardPanel.debugLoop();
 	}
 	

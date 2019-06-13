@@ -56,11 +56,15 @@ public class StartPanel extends StackPane implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        if (((Button) actionEvent.getSource()).getText() == "Start") {
-            this.view.changeToBoard();
-        }else if(((Button) actionEvent.getSource()).getText() == "Debug"){
-            System.out.println("RUA!!!");
-            this.debugLoop();
+    	String command = ((Button)actionEvent.getSource()).getText();
+        switch (command) {
+	        case "Start":
+                this.view.changeToBoard();
+                break;
+	        case "Debug":
+		        System.out.println("RUA!!!");
+		        this.view.changeToDebug();
+		        break;
         }
     }
 }
