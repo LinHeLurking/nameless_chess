@@ -7,7 +7,7 @@
 	<version>1.0-SNAPSHOT</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>12</java.version>
+		<java.version>11</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 	</properties>
@@ -15,12 +15,12 @@
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-controls</artifactId>
-			<version>12</version>
+			<version>11</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-fxml</artifactId>
-			<version>12</version>
+			<version>11</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -30,9 +30,9 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.0</version>
 				<configuration>
-					<source>12</source>
-					<release>12</release>
-					<target>12</target>
+					<source>11</source>
+					<release>11</release>
+					<target>11</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -40,9 +40,9 @@
 				<artifactId>javafx-maven-plugin</artifactId>
 				<version>0.0.2</version>
 				<configuration>
-					<source>12</source>
-					<release>12</release>
-					<target>12</target>
+					<source>11</source>
+					<release>11</release>
+					<target>11</target>
 					<jlinkImageName>nameless_chess</jlinkImageName>
 					<launcher>launcher</launcher>
 					<mainClass>online.ruin_of_future.nameless_chess.Play</mainClass>

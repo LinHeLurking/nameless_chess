@@ -1,7 +1,6 @@
 package online.ruin_of_future.nameless_chess;
 
 public class CppSync {
-
     private static String path_escape(String str) {
         char[] str_char = str.toCharArray();
         for (int i = 0; i < str_char.length; ++i) {
@@ -27,7 +26,6 @@ public class CppSync {
             System.load(ldp);
         }
     }
-
 
     /*
      *   pass move events retrieved from button click to cpp lib
@@ -57,18 +55,6 @@ public class CppSync {
     public native int sync_gamemode(int mode);
 
 
-
-    /*
-     *   this is used for testing library loading
-     *   return value:
-     *       1 -> work well
-     * */
-    public native int sync_nothing();
-
-    public native int sync_drawboard_in_commandline();
-
-
-
     //
 
     // not finished
@@ -84,4 +70,13 @@ public class CppSync {
         int to_y = to % 11;
         return 0;
     }
+	
+	public native int sync_drawboard_in_commandline();
+	
+	/*
+	 *   this is used for testing library loading
+	 *   return value:
+	 *       1 -> work well
+	 * */
+	public native int sync_nothing();
 }
