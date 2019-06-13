@@ -17,11 +17,19 @@ JNIEXPORT jint JNICALL Java_online_ruin_1of_1future_nameless_1chess_CppSync_sync
 
 /*
  * Class:     online_ruin_of_future_nameless_chess_CppSync
- * Method:    sycn_gamemode
+ * Method:    sync_gamemode
  * Signature: (I)I
  */
-JNIEXPORT jint JNICALL Java_online_ruin_1of_1future_nameless_1chess_CppSync_sycn_1gamemode
+JNIEXPORT jint JNICALL Java_online_ruin_1of_1future_nameless_1chess_CppSync_sync_1gamemode
   (JNIEnv *, jobject, jint);
+
+/*
+ * Class:     online_ruin_of_future_nameless_chess_CppSync
+ * Method:    sync_nothing
+ * Signature: ()I
+ */
+JNIEXPORT jint JNICALL Java_online_ruin_1of_1future_nameless_1chess_CppSync_sync_1nothing
+  (JNIEnv *, jobject);
 
 #ifdef __cplusplus
 }
