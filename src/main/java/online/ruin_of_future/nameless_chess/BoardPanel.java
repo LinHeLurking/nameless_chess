@@ -14,10 +14,8 @@ public class BoardPanel {
 	
 	private View view;
 	private GridPane panel;
-	private Button before;
-	private String c_id = null;
+	private Button before = null;
 	private CppSync syncer = new CppSync();
-	
 	
 	BoardPanel(View view) {
 		this.view = view;
@@ -57,22 +55,26 @@ public class BoardPanel {
 	@FXML
 	public void onButtonClick(ActionEvent event) {
 		Button button = (Button) event.getSource();
-		String init = button.getId();
-		int id = -1;
 		String[] pos = button.getText().split("\\s");
 		int x = Integer.parseInt(pos[0]);
 		int y = Integer.parseInt(pos[1]);
-		if (this.before == button) return;
-		
-		if (init != null) {
-			this.c_id = init;
-			id = Integer.parseInt(init.split("-")[1]);
-		} else if (this.c_id != null) {
-			button.setId(this.c_id);
-			this.before.setId(null);
-			this.c_id = null;
+		int id = Integer.parseInt(button.getId().split("-")[1]);
+		if (this.before == null) {
+			this.before = button;
+			return;
 		}
-		System.out.println(String.format("coordinate: (%d, %d) player: %d", x, y, id));
-		this.before = button;
+		String[] fromPos = this.before.getText().split("\\s");
+		int fromX = Integer.parseInt(fromPos[0]);
+		int fromY = Integer.parseInt(fromPos[1]);
+		int from_id = Integer.parseInt(this.before.getId().split("-")[1]);
+		
+		System.out.println(String.format("coordinate a: (%d, %d) id: %d", fromX, fromY, from_id));
+		System.out.println(String.format("coordinate b: (%d, %d) id: %d", x, y, id));
+		
+		if (syncer.sync_java_manual_move(fromX, fromY, x, y) != 2) {
+			button.setId(String.format("init-%d", from_id));
+			this.before.setId("init-4");
+		}
+		this.before = null;
 	}
 }
