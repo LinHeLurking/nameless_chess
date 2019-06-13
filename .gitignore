@@ -4,6 +4,7 @@
 .classpath
 .project
 .settings
+lib
 build/*
 src/main/cpp/.vs/*
 src/main/cpp/out/*

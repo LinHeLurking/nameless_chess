@@ -2,17 +2,41 @@ package online.ruin_of_future.nameless_chess;
 
 public class CppSync {
 
-    static{
+    private static String path_escape(String str) {
+        char[] str_char = str.toCharArray();
+        for (int i = 0; i < str_char.length; ++i) {
+            if (str_char[i] == '\\') {
+                str_char[i] = '/';
+            }
+        }
+        return String.valueOf(str_char);
+    }
+
+    static {
+        String currentDirectory = System.getProperty("user.dir");
+        // System.out.println("current directory is " + currentDirectory);
         try {
-            System.loadLibrary("nameless_chess_cpp");
-        }catch (Exception e){
-            System.loadLibrary("lib/nameless_chess_cpp");
+            String ldp = currentDirectory + "/lib/" + "nameless_chess_cpp.dll";
+            ldp = path_escape(ldp);
+            System.out.println("trying to loading lib in " + ldp);
+            System.load(ldp);
+        } catch (Exception e) {
+            String ldp = currentDirectory + "/" + "nameless_chess_cpp";
+            ldp = path_escape(ldp);
+            System.out.println("trying to loading lib in " + ldp);
+            System.load(ldp);
         }
     }
 
 
-    private native int sync_move(int from_x, int from_y, int to_x, int to_y);
-    private native int sync_gamemode(int mode);
-    // this is a method used to test library loading
-    private native int sync_nothing();
+    public native int sync_move(int from_x, int from_y, int to_x, int to_y);
+
+    public native int sync_gamemode(int mode);
+
+    /*
+     *   this is used for testing library loading
+     *   return value:
+     *       1 -> work well
+     * */
+    public native int sync_nothing();
 }

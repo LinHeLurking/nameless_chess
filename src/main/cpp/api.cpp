@@ -3,6 +3,12 @@
 
 using namespace std;
 
-JNIEXPORT int JNICALL JAVA_online_ruin_of_future_nameless_chess_CppSync_sync_move(JNIEnv*, jobject) {
-	return 0;
+
+/*
+ * Class:     online_ruin_of_future_nameless_chess_CppSync
+ * Method:    sync_nothing
+ * Signature: ()I
+ */
+JNIEXPORT jint JNICALL Java_online_ruin_1of_1future_nameless_1chess_CppSync_sync_1nothing(JNIEnv*, jobject) {
+	return 1;
 }
