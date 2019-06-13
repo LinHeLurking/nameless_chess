@@ -81,7 +81,7 @@ public class View implements EventHandler<ActionEvent> {
 
 	void changeToDebug() {
 		System.out.println("Debugging");
-		this.root.setCenter(this.idlePanel.getPanel());
+		this.root.setCenter(this.idlePanel);
 		ExecutorService threadPool = Executors.newCachedThreadPool();
 		threadPool.submit((Callable<java.lang.Object>) () -> {
 			boardPanel.debugLoop();
@@ -95,7 +95,7 @@ public class View implements EventHandler<ActionEvent> {
 		this.root.setCenter(this.boardPanel.getPanel());
 	}
 	
-	private void backToStart() {
+	void backToStart() {
 		System.out.println("Home");
 		this.root.setCenter(this.startPanel);
 	}

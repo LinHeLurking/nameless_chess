@@ -8,11 +8,9 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 
 
-
 public class StartPanel extends StackPane implements EventHandler<ActionEvent> {
 
     private View view;
-
 
     StartPanel(View view) {
         this.view = view;

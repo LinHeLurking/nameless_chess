@@ -8,10 +8,30 @@
 	-fx-background-position: center center;
 }
 
+#idle {
+	-fx-background-image: url(idle.gif);
+	-fx-background-size: stretch stretch;
+	-fx-background-position: center center;
+}
+
 #start {
 	-fx-background-color: lightgreen;
 }
 #start:hover {
+	-fx-background-color: lightskyblue;
+}
+
+#debug {
+	-fx-background-color: green;
+}
+#debug:hover {
+	-fx-background-color: red;
+}
+
+#home {
+	-fx-background-color: lightgreen;
+}
+#home:hover {
 	-fx-background-color: lightskyblue;
 }
 
