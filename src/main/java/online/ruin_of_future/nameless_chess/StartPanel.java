@@ -7,10 +7,23 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 
+import java.util.concurrent.*;
+
 
 public class StartPanel extends StackPane implements EventHandler<ActionEvent> {
 
     private View view;
+
+    private Future debugLoop(){
+        ExecutorService threadPool = Executors.newCachedThreadPool();
+        return threadPool.submit(new Callable(){
+            @Override
+            public Integer call() throws Exception{
+                view.changeToDebug();
+                return 0;
+            }
+        });
+    }
 
     StartPanel(View view) {
         this.view = view;
@@ -47,7 +60,7 @@ public class StartPanel extends StackPane implements EventHandler<ActionEvent> {
             this.view.changeToBoard();
         }else if(((Button) actionEvent.getSource()).getText() == "Debug"){
             System.out.println("RUA!!!");
-            this.view.changeToDebug();
+            this.debugLoop();
         }
     }
 }
