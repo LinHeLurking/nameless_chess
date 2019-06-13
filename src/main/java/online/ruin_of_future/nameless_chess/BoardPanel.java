@@ -24,7 +24,6 @@ public class BoardPanel {
 	
 	// For board.fxml loading controller
 	public BoardPanel() {
-
 		if (syncer.sync_nothing() == 1) {
 			System.out.println("Loading cpp library successfully.");
 			System.out.println("The game looks like below in cpp's side");
@@ -34,6 +33,10 @@ public class BoardPanel {
 	
 	public void setView(View view) {
 		this.view = view;
+	}
+
+	public void debugLoop(){
+		this.syncer.sync_unforgiving_game_loop();
 	}
 	
 	private void init() {
@@ -47,6 +50,8 @@ public class BoardPanel {
 			System.exit(1);
 		}
 	}
+
+
 	
 	GridPane getPanel() {
 		return this.panel;

@@ -72,6 +72,11 @@ public class View implements EventHandler<ActionEvent> {
 		System.out.println("Start");
 		this.root.setCenter(this.boardPanel.getPanel());
 	}
+
+	void changeToDebug() {
+		System.out.println("Start");
+		this.boardPanel.debugLoop();
+	}
 	
 	private void createNewGame() {
 		System.out.println("New");

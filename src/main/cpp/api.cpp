@@ -85,3 +85,9 @@ JNIEXPORT jint JNICALL Java_online_ruin_1of_1future_nameless_1chess_CppSync_sync
 }
 
 
+
+JNIEXPORT jint JNICALL Java_online_ruin_1of_1future_nameless_1chess_CppSync_sync_1unforgiving_1game_1loop(JNIEnv*, jobject) {
+	game.game_loop();
+	return 0;
+}
+

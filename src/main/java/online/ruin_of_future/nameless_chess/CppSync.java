@@ -55,7 +55,6 @@ public class CppSync {
     public native int sync_gamemode(int mode);
 
 
-    //
 
     // not finished
     public int sync_cpp_auto_move() {
@@ -70,6 +69,8 @@ public class CppSync {
         int to_y = to % 11;
         return 0;
     }
+
+    // used for testing
 	
 	public native int sync_drawboard_in_commandline();
 	
@@ -79,4 +80,6 @@ public class CppSync {
 	 *       1 -> work well
 	 * */
 	public native int sync_nothing();
+
+	public native int sync_unforgiving_game_loop();
 }
