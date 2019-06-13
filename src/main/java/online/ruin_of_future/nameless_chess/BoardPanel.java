@@ -28,6 +28,8 @@ public class BoardPanel {
     public BoardPanel() {
         if (syncer.sync_nothing() == 1) {
 			System.out.println("Loading cpp library successfully.");
+			System.out.println("The game looks like below in cpp's side");
+			syncer.sync_drawboard_in_commandline();
         }
     }
 

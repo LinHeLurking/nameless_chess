@@ -29,9 +29,16 @@ public class CppSync {
     }
 
 
+    /*
+    *   return value:
+    *       +1 -> valid move
+    *       -1 -> invalid move
+    * */
     public native int sync_move(int from_x, int from_y, int to_x, int to_y);
 
     public native int sync_gamemode(int mode);
+
+    public native int sync_drawboard_in_commandline();
 
     /*
      *   this is used for testing library loading
