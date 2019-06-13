@@ -66,13 +66,13 @@ public class BoardPanel {
 		String[] fromPos = this.before.getText().split("\\s");
 		int fromX = Integer.parseInt(fromPos[0]);
 		int fromY = Integer.parseInt(fromPos[1]);
-		int from_id = Integer.parseInt(this.before.getId().split("-")[1]);
+		int fromId = Integer.parseInt(this.before.getId().split("-")[1]);
 		
-		System.out.println(String.format("coordinate a: (%d, %d) id: %d", fromX, fromY, from_id));
+		System.out.println(String.format("coordinate a: (%d, %d) id: %d", fromX, fromY, fromId));
 		System.out.println(String.format("coordinate b: (%d, %d) id: %d", x, y, id));
 		
 		if (syncer.sync_java_manual_move(fromX, fromY, x, y) != 2) {
-			button.setId(String.format("init-%d", from_id));
+			button.setId(String.format("init-%d", fromId));
 			this.before.setId("init-4");
 		}
 		this.before = null;
