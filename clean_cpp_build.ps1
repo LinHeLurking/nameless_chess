@@ -1,2 +1,9 @@
 Write-Host "Removing build directory directly"
-rm -r .\build -force
+if(Test-Path .\build){
+    Remove-Item -r .\build -force
+}
+
+if(Test-Path .\lib){
+    Remove-Item -r .\lib -force
+}
+

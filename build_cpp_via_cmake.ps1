@@ -13,7 +13,7 @@ Write-Host "Building via Cmake"
 
 cd .\build
 
-cmake ..\src\main\cpp\
+cmake ..\src\main\cpp\ -A x64 -T host=x64
 
 cmake --build . 
 
