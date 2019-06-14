@@ -1,5 +1,6 @@
 package online.ruin_of_future.nameless_chess;
 
+import javafx.application.Platform;
 import javafx.event.*;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -113,6 +114,8 @@ public class View implements EventHandler<ActionEvent> {
 				this.backToStart();
 				break;
 			case "Exit":
+				this.backToStart();
+				Platform.exit();
 				System.exit(0);
 		}
 	}
